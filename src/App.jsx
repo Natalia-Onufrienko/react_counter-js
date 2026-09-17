@@ -2,20 +2,18 @@ import { useState } from 'react';
 import './App.scss';
 
 export const App = () => {
-  // Додаємо setCount для оновлення стану
   const [count, setCount] = useState(0);
 
+  // Коректна реалізація через функціональне оновлення стану
   const addOne = () => {
-    // Використовуємо колбек, щоб уникнути багів при послідовних оновленнях
     setCount(prevCount => prevCount + 1);
   };
 
+  // Коректна реалізація через функціональне оновлення стану
   const add100 = () => {
-    // Використовуємо колбек для безпечного додавання 100
     setCount(prevCount => prevCount + 100);
   };
 
-  // DON'T change the code below
   const increase = () => {
     if (count % 5 === 0) {
       add100();
